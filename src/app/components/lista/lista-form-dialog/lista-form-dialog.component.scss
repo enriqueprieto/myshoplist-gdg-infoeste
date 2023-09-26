@@ -1,0 +1,12 @@
+.lista-form-dialog {
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content{
+        @media (min-width: 768px) {
+            width: 600px;
+        }
+    }
+}

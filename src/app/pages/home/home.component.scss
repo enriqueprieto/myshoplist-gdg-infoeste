@@ -1,0 +1,39 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    
+    &__toolbar {
+        flex-shrink: 0;
+    }
+
+
+
+    &__listas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__content {
+        padding: 16px;
+    }
+
+    &__add__button {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 3;
+    }
+
+    &__container {
+        overflow: auto;
+        height: 100%;
+        position: relative;
+    }
+}

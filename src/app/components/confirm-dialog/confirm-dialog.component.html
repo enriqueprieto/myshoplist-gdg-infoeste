@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirmação</h1>
+<mat-dialog-content>
+    <p>Você tem certeza de que deseja continuar?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Não</button>
+    <button mat-button (click)="onConfirm()" color="warn" cdkFocusInitial>Sim</button>
+</mat-dialog-actions>

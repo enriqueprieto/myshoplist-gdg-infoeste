@@ -1,0 +1,35 @@
+<div class="lista-form-dialog">
+    <h2 mat-dialog-title>
+        {{ lista.id ? 'Editar Lista' : 'Adicionar Lista'}}
+    </h2>
+    <mat-dialog-content class="lista-form-dialog__content">
+        <form id="js-lista-form-dialog" class="lista-form-dialog__form" (ngSubmit)="salvar($event)">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <input 
+                    matInput 
+                    placeholder="Ex. Horti-fruti" 
+                    [(ngModel)]="lista.name" 
+                    name="name"
+                    required
+                >
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput placeholder="Ex. Comprar alface, tomate, alho e cebola" [(ngModel)]="lista.description" name="description"></textarea>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Fechar</button>
+        <button 
+            mat-flat-button 
+            color="primary" 
+            type="submit" 
+            form="js-lista-form-dialog"
+        >
+            Salvar
+        </button>
+    </mat-dialog-actions>
+</div>

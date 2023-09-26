@@ -1,0 +1,48 @@
+<div class="home">
+    <mat-toolbar color="primary" class="home__toolbar">
+        <span>My Shop List</span>
+    </mat-toolbar>
+    
+    <mat-drawer-container class="home__container">
+        <mat-drawer-content>
+            <main class="home__content">
+                <h2>Minha listas</h2>
+                <div *ngIf="listas.length" class="home__listas" role="list">
+                    <mat-card *ngFor="let lista of listas" role="listitem">
+                        <mat-card-header>
+                            <mat-card-title>
+                                {{ lista.name }}
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            {{ lista.description }}
+                        </mat-card-content>
+                        <mat-card-actions align="end">
+                            <button mat-icon-button color="warn" (click)="abrirDialogoDeConfirmacao(lista)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button mat-icon-button (click)="abrirLista(lista)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+                <div *ngIf="!listas.length" class="home__listas__vazia">
+                    <p class="home__listas__vazia__disclaimer">
+                        Você não tem nenhuma lista criada.
+                    </p>
+                </div>
+
+            </main>
+            <button 
+                mat-fab 
+                color="primary" 
+                aria-label="Adicionar Lista" 
+                class="home__add__button"
+                (click)="adicionarLista()"
+            >
+                <mat-icon>add</mat-icon>
+              </button>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
